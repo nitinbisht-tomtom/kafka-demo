@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: kafka-demo
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: kafka-demo-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      enable-auto-commit: true
+      auto-commit-interval: 1000
+    properties:
+      session.timeout.ms: 30000
+      max.poll.records: 500
+
+# Kafka topic configuration
+kafka:
+  topic:
+    name: demo-topic
